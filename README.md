@@ -14,6 +14,9 @@
 ### Autofix linting errors where pssible (Note: this will not necessarily fix all of them)
     npm run fix
 
+## Verfification
+### Travis CI
+    Continuous Integration checks using Travis CI
     
 ### Associated Links (requires you to be logged into github):
 [Project Requirements](https://github.com/the-Coding-Boot-Camp-at-UT/UT-AUS-FSF-FT-03-2020-U-C/blob/master/01-Class-Content/15-Project-2/02-Homework/README.md)
