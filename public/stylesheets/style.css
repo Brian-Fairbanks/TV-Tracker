@@ -2,3 +2,15 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+@media screen and (max-width: 639px) {
+  #menu-options {
+      display: none;
+  }
+  .my-hidden {
+    display: none !important;
+  }
+  .my-block {
+    display: block !important;
+  }
+}
