@@ -8,8 +8,6 @@ module.exports = function(body) {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-      <!-- Bootstrap Stylesheet -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"></link>
       <!-- Tailwind Stylesheet -->
       <link rel="stylesheet" href="../stylesheets/output.css" type="text/css" />
       <!-- Custom Stylesheet -->
