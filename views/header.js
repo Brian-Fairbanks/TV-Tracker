@@ -1,7 +1,7 @@
 // The body here should include the login/logout button in the header as well
 
 module.exports = function(body) {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -53,5 +53,5 @@ module.exports = function(body) {
     
       <script src="./js/navbar.js"></script></body>
     
-    </html>`
-}
+    </html>`;
+};
