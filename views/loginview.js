@@ -1,38 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+module.exports = `<div>
+<a href="/login"
+  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Login</a>
+<a href="/signup"
+  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Sign
+  Up</a>
+</div>
+</div>
+</nav>
+</header>
 
-<head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="stylesheets/output.css" rel="stylesheet">
-  <link href="stylesheets/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <div class="flex content-center justify-center mt-32 login">
+<div class="flex content-center justify-center mt-32">
     <div class="w-full max-w-xs">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 login">
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email-input">
             Username
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username" type="text" placeholder="Username">
+            id="email-input" type="text" placeholder="Username">
         </div>
         <div class="mb-6">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="password-input">
             Password
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password" type="password" placeholder="******************">
+            id="password-input" type="password" placeholder="******************">
         </div>
         <div class="flex items-center justify-between">
           <button
             class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button">
+            type="submit">
             Sign In
           </button>
           <a class="inline-block align-baseline font-bold text-sm text-teal-500 hover:text-teal-800" href="#">
@@ -48,7 +47,4 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/login.js"></script>
-
-</body>
-
-</html>
+`;
