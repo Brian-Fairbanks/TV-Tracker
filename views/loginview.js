@@ -11,22 +11,22 @@ module.exports= `<div>
 
 <div class="flex content-center justify-center mt-32">
     <div class="w-full max-w-xs">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 login">
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email-input">
             Username
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username" type="text" placeholder="Username">
+            id="email-input" type="text" placeholder="Username">
         </div>
         <div class="mb-6">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="password-input">
             Password
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password" type="password" placeholder="******************">
+            id="password-input" type="password" placeholder="******************">
         </div>
         <div class="flex items-center justify-between">
           <button

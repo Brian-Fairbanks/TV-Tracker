@@ -1,6 +1,6 @@
 module.exports = {
     header: require("./header"),
-    login: require("./login"),
-    members: require("./members"),
-    signup: require("./signup")
+    login: require("./loginview"),
+    members: require("./membersview"),
+    signup: require("./signupview")
 }
