@@ -2,8 +2,8 @@
         Dependencies
 ===============================================================*/
 // Using Axios to make API calls.
-var axios = require("axios");
-var db = require("../models");
+const axios = require("axios");
+const db = require("../models");
 
 /*===============================================================
         API Routes
@@ -112,5 +112,30 @@ module.exports = function(app) {
 
     //We finall have all the data.  Return it.
     res.json({ ...omdb.data, ...dbData.dataValues });
+  });
+
+  app.get("/api/search/:query/:page?", async function(req, res) {
+    const searched = req.params.query;
+    var page = req.params.page;
+    // optional page.  If not included, give it 1
+    if (!page) {
+      page = 1;
+    }
+
+    // Pull information from OMDB
+    const omdb = await axios({
+      method: "GET",
+      url: "https://www.omdbapi.com/",
+      params: {
+        s: searched,
+        apikey: process.env.OMDBAPI,
+        page: page
+      }
+    });
+    //console.log(omdb.data);
+    omdb.data.Search = omdb.data.Search.filter(content =>
+      ["movie", "series"].includes(content.Type)
+    );
+    return res.json(omdb.data);
   });
 };
