@@ -78,10 +78,10 @@ module.exports = function(app) {
 
         // insert data into database, if it doesnt already exist
         let thisID = await db.Movies.findOne({
-          where: { imdbID: omdb.data.imdbID }
+          where: { imdbID: movie.external_ids.imdb.id }
         });
 
-        if (thisID !== null) {
+        if (thisID === null) {
           await db.Movies.create(newMovie);
         }
 
