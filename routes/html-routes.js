@@ -30,4 +30,8 @@ module.exports = function(app) {
     // res.sendFile(path.join(__dirname, "../public/members.html"));
     res.send(view.header(view.members));
   });
+
+  app.get("/user", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/user.html"));
+  });
 };
