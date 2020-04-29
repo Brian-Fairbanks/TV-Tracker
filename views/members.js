@@ -6,12 +6,6 @@ module.exports = function() {
     </div>
     </nav>
     </header>
-    <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
-    </div>
-  </div>
+    <h2 class="text-center text-teal-500">Welcome <span class="member-name"></span></h2>
   <script type="text/javascript" src="js/members.js"></script>`
 }
