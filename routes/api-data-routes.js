@@ -115,8 +115,11 @@ module.exports = function(app) {
     res.json({ ...omdb.data, ...dbData.dataValues });
   });
 
-  app.get("/api/search/:query", async function(req, res) {
+  app.get("/api/search/:query/:page?", async function(req, res) {
     const searched = req.params.query;
+    var page = req.params.page;
+    // optional page.  If not included, give it 1
+    if(!page){page=1;}
 
     // Pull information from OMDB
     const omdb = await axios({
@@ -125,11 +128,13 @@ module.exports = function(app) {
       params: {
         s: searched,
         apikey: process.env.OMDBAPI,
-        type: "movie"
+        page: page
       }
     });
     //console.log(omdb.data);
-
+    omdb.data.Search = omdb.data.Search.filter(content =>
+      ["movie", "series"].includes(content.Type)
+    );
     return res.json(omdb.data);
   });
 };
