@@ -12,16 +12,31 @@ body {
 #search-bar {
   margin-left: 15px;
   width: 50px;
+  /* text-align: center; */
 }
 
 #search-box {
   width: 250px;
+  text-align: center;
 }
 
 #tr-title {
   font-size: 25px;
+  /* text-align: center; */
   margin-left: 15px;
   margin-top: 10px;
+}
+
+#movies-title {
+  font-size: 15px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+#shows-title {
+  font-size: 15x;
+  margin-left: 15px;
+  margin-top: 30px;
 }
 
 footer {
