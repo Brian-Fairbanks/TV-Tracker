@@ -1,4 +1,52 @@
+
+html {
+  position: relative;
+  min-height: 100%;
+  background-color: #4a5255;
+}
+
+body {
+  margin-bottom: 50px;
+}
+
+#search-bar {
+  margin-left: 15px;
+  width: 50px;
+}
+
+#search-box {
+  width: 250px;
+}
+
+#tr-title {
+  font-size: 25px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+@media screen and (max-width: 639px) {
+  #menu-options {
+      display: none;
+  }
+  .my-hidden {
+    display: none !important;
+  }
+  .my-block {
+    display: block !important;
+  }
 }
