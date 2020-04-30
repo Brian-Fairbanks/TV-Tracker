@@ -9,6 +9,9 @@ module.exports = function() {
         </div>
     </div>
 
+    <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
+
+
     <div id="movies" class="flex-auto flex flex-col content-center justify-center mt-8">
         <div class="w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-start py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white">
 
@@ -56,8 +59,6 @@ module.exports = function() {
             <h2 id="run-time">Run Time</h2>
             <h3 class="text-teal-200 hover:text-teal-500"><a href="#">More info...</a></h3>
         </div>
-
-    <div id="movies-title"></div>
 
     </div>
 
