@@ -79,11 +79,13 @@ module.exports = function(props = {}, user) {
 
     </div>
     <div class="w-full flex justify-around mt-2 p-3 bg-gray-900">
-      ${JSON.parse(props.uTellyLocations)
-    .map(location => {
-      return `<a href="${location.url}"><img class="logo" src="${location.icon}" src="${location.name}"></a>`;
-    })
-    .join("")}
+      ${!props.uTellyLocations?
+    `<div class="text-xl text-white">No streaming locations found for ${props.Title}.<div>`
+    :JSON.parse(props.uTellyLocations)
+      .map(location => {
+        return `<a href="${location.url}"><img class="logo" src="${location.icon}" src="${location.name}"></a>`;
+      })
+      .join("")}
     </div>
   </div>
 </div>
