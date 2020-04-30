@@ -10,7 +10,7 @@ $(document).ready(function () {
         props.Search.map(movie => {
           return `
                       <div class="inline-block mx-8 flex-none mb-4">
-                        <a href="/content/${movie.Title}">
+                        <a href="/content/${movie.Title}-${movie.imdbID}">
                           <img style="height: 175px; max-width: 185px" class="m-auto" src="${movie.Poster}" alt="${movie.Title} poster">
                             <div style="max-height: 1.5em; max-width: 185px;" class="text-center text-white overflow-hidden">
                             ${movie.Title} (${movie.Year})</div>

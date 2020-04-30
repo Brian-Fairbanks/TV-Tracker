@@ -25,10 +25,11 @@ module.exports = function(app) {
     res.send(view.header(view.login(),req.user));
   });
 
-  app.get("/content/:content", async function(req, res) {
+  app.get("/content/:content-:imdb", async function(req, res) {
     //get data from API
     const helper = require("./helper.js");
-    const movie = await helper.getMovieData(req.params.content);
+
+    const movie = await helper.getMovieData(req.params.imdb);
     // If the user is already signed in
     return res.send(view.header(view.content(movie, req.user),req.user));
   });
