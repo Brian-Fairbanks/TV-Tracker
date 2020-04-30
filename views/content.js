@@ -1,6 +1,6 @@
 module.exports = function(props = {}, user) {
   return `
-</header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <div class="flex justify-center text-center mt-2">
   <div class="container flex flex-wrap h-full bg-teal-400 flex">
     <div class="w-full text-center text-white mb-2 p-3 bg-gray-900">
@@ -71,7 +71,12 @@ module.exports = function(props = {}, user) {
     .join("")}</ul>
         </div>
       </div>
-      ${user ? `<div id="addWatchlist" data-movie-id="${props.id}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Add to Watchlist</div>` : ""}
+      ${user ? `
+      <button id="addWatchlist" data-movie-id="${props.id}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Add to Watchlist</button>
+      <button id="removeWatchlist" data-movie-id="${props.id}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-red-600 border-red-600 hover:border-transparent hover:text-white hover:bg-red-600 mt-4 sm:mt-0">Remove from Watchlist</button>
+      `
+    :""}
+
     </div>
     <div class="w-full flex justify-around mt-2 p-3 bg-gray-900">
       ${JSON.parse(props.uTellyLocations)
@@ -83,6 +88,6 @@ module.exports = function(props = {}, user) {
   </div>
 </div>
 
-<script type="text/javascript src="/js/watchList.js"></script>
+<script src="/js/watchlist.js"></script>
   `;
 };

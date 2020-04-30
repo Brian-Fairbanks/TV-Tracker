@@ -1,15 +1,35 @@
+$(document).ready( function(){
 
+  var addButton = $("#addWatchlist");
+  var removeButton = $("#removeWatchlist");
 
-$(document).load( function(){
-
-  var watchButton = $("#addWatchlist");
-  watchButton.on("click", handleWatchlistAdd);
+  addButton.on("click", handleWatchlistAdd);
+  removeButton.on("click", handleWatchlistRemove);
   
 });
 
 
-function handleWatchlistAdd(event){
-  const movieID = event.target().attr("data-movie-id");
-  console.log("add"+movieID);
+function handleWatchlistAdd(){
+  const movieID = $(this).attr("data-movie-id");
+  $.ajax({
+    url:"/api/user/watchlist",
+    type:"POST",
+    data:{movieID:movieID}
+  })
+    .then(function(response){
+      console.log(response);
+    });
+}
 
+
+function handleWatchlistRemove(){
+  const movieID = $(this).attr("data-movie-id");
+  $.ajax({
+    url:"/api/user/watchlist",
+    type:"DELETE",
+    data:{movieID:movieID}
+  })
+    .then(function(response){
+      console.log(response);
+    });
 }

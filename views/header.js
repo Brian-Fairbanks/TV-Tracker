@@ -1,6 +1,6 @@
 // The body here should include the login/logout button in the header as well
 
-module.exports = function(body) {
+module.exports = function (body, user) {
   return `<!DOCTYPE html>
     <html lang="en">
     
@@ -32,18 +32,36 @@ module.exports = function(body) {
             </button>
           </div>
     
-          <div class="w-full flex-grow sm:flex sm:items-center sm:w-auto sm:block" id="menu-options">
-            <div class="text-sm sm:flex-grow">
-              <a href="#" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4">
-                Docs
+          <div class="w-full flex-grow sm:flex sm:items-center sm:w-auto sm:block my-block" id="menu-options">
+            <div class="text-sm sm:flex-grow flex-row sm:justify-between flex mr-4">
+              <a href="/" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4">
+                Home
               </a>
-              <a href="#" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4">
-                Examples
-              </a>
-              <a href="#" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white">
-                Blog
-              </a>
+            ${!user ?
+    `</div>
+            <div>
+              <a href="/login"
+                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Login</a>
+              <a href="/signup"
+                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Sign
+              Up</a>
             </div>
+          </div>
+        </nav>
+      </header>` : `
+      <p class="text-teal-200 inline-block sm:mt-0 mt-4">Welcome ${user.email}!</p>
+      </div>
+      <div>
+      <a href="/user"
+        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">My Watch List</a>
+      <a href="/logout"
+        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Logout</a>
+      </div>
+      </div>
+      </nav>
+      </header>`}
+
+
             
         ${body}
     
@@ -51,7 +69,7 @@ module.exports = function(body) {
         <div class="text-teal-200">Copyright</div>
       </footer>
     
-      <script src="./js/navbar.js"></script></body>
+      <script src="/js/navbar.js"></script></body>
     
     </html>`;
 };
