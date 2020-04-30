@@ -70,7 +70,7 @@ module.exports = function (body, user) {
         <div class="text-teal-200">Copyright</div>
       </footer>
     
-      <script src="./js/navbar.js"></script></body>
+      <script src="/js/navbar.js"></script></body>
     
     </html>`;
 };

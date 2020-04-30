@@ -1,15 +1,5 @@
 module.exports = function() {
-  return `<div>
-<a href="/login"
-  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Login</a>
-<a href="/signup"
-  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Sign
-  Up</a>
-</div>
-</div>
-</nav>
-</header>
-
+  return `
 <div class="flex content-center justify-center mt-32">
     <div class="w-full max-w-xs">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 login">

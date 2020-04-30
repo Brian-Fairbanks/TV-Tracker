@@ -1,6 +1,5 @@
 module.exports = function(props = {}, user) {
   return `
-</header>
 <div class="flex justify-center text-center mt-2">
   <div class="container flex flex-wrap h-full bg-teal-400 flex">
     <div class="w-full text-center text-white mb-2 p-3 bg-gray-900">
