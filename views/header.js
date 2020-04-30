@@ -12,6 +12,10 @@ module.exports = function (body, user) {
       <link rel="stylesheet" href="../stylesheets/output.css" type="text/css" />
       <!-- Custom Stylesheet -->
       <link rel="stylesheet" href="../stylesheets/style.css" type="text/css" />
+      
+      <!-- jQuery -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     
       <title>W4</title>
     </head>

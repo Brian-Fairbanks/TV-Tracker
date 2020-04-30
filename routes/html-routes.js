@@ -13,7 +13,7 @@ module.exports = function(app) {
       return res.redirect("/user");
     }
     // res.sendFile(path.join(__dirname, "../public/signup.html"));
-    res.send(view.header(view.signup(),req.user));
+    res.send(view.header(view.home(),req.user));
   });
 
   app.get("/login", function(req, res) {
