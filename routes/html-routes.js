@@ -25,6 +25,14 @@ module.exports = function(app) {
     res.send(view.header(view.login()));
   });
 
+  app.get("/content/:content", async function(req, res) {
+    //get data from API
+    const helper = require("./helper.js");
+    const movie = await helper.getMovieData(req.params.content);
+    // If the user is already signed in
+    return res.send(view.header(view.content(movie, req.user)));
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
 
