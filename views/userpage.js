@@ -1,5 +1,14 @@
 module.exports = function() {
-    return `<div class="flex-auto flex justify-center mt-8">
+    return `<div>
+    <a href="/login"
+      class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Logout</a>
+    <a href="/signup"
+      class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0"></a>
+    </div>
+    </div>
+    </nav>
+    </header>
+    <div class="flex-auto flex justify-center mt-8">
         <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto">
             <form id="search-bar">
                 <input id="search-box" type="search" class="bg-purple-white shadow rounded border-0 p-3 w-full"
