@@ -71,7 +71,7 @@ module.exports = function(props = {}, user) {
     .join("")}</ul>
         </div>
       </div>
-      ${user ? `<a href="#">Add to you watch list, ${user.email}?</a>` : ""}
+      ${user ? `<a href="#">Add to your watch list, ${user.email}?</a>` : ""}
     </div>
     <div class="w-full flex justify-around mt-2 p-3 bg-gray-900">
       ${JSON.parse(props.uTellyLocations)

@@ -1,6 +1,6 @@
 // The body here should include the login/logout button in the header as well
 
-module.exports = function(body) {
+module.exports = function (body, user) {
   return `<!DOCTYPE html>
     <html lang="en">
     
@@ -44,6 +44,25 @@ module.exports = function(body) {
                 Blog
               </a>
             </div>
+            ${!user ?
+    `<div>
+              <a href="/login"
+                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Login</a>
+              <a href="/signup"
+                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Sign
+              Up</a>
+            </div>
+          </div>
+        </nav>
+      </header>` : `<div>
+      <a href="/logout"
+        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Logout</a>
+      </div>
+      </div>
+      </nav>
+      </header>`}
+
+
             
         ${body}
     

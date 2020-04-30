@@ -13,7 +13,7 @@ module.exports = function(app) {
       return res.redirect("/user");
     }
     // res.sendFile(path.join(__dirname, "../public/signup.html"));
-    res.send(view.header(view.signup()));
+    res.send(view.header(view.signup(),req.user));
   });
 
   app.get("/login", function(req, res) {
@@ -22,7 +22,7 @@ module.exports = function(app) {
       return res.redirect("/user");
     }
     // res.sendFile(path.join(__dirname, "../public/login.html"));
-    res.send(view.header(view.login()));
+    res.send(view.header(view.login(),req.user));
   });
 
   app.get("/content/:content", async function(req, res) {
@@ -30,13 +30,13 @@ module.exports = function(app) {
     const helper = require("./helper.js");
     const movie = await helper.getMovieData(req.params.content);
     // If the user is already signed in
-    return res.send(view.header(view.content(movie, req.user)));
+    return res.send(view.header(view.content(movie, req.user),req.user));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
 
   app.get("/user", isAuthenticated, function(req, res) {
-    res.send(view.header(view.user()));
+    res.send(view.header(view.user(),req.user));
   });
 };
