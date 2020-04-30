@@ -1,6 +1,5 @@
 module.exports = function(props = {}, user) {
   return `
-</header>
 <div class="flex justify-center text-center mt-2">
   <div class="container flex flex-wrap h-full bg-teal-400 flex">
     <div class="w-full text-center text-white mb-2 p-3 bg-gray-900">
@@ -71,7 +70,7 @@ module.exports = function(props = {}, user) {
     .join("")}</ul>
         </div>
       </div>
-      ${user ? `<a href="#">Add to you watch list, ${user.email}?</a>` : ""}
+      ${user ? `<a href="#">Add to your watch list, ${user.email}?</a>` : ""}
     </div>
     <div class="w-full flex justify-around mt-2 p-3 bg-gray-900">
       ${JSON.parse(props.uTellyLocations)
