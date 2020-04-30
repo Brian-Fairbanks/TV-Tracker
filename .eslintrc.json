@@ -4,8 +4,9 @@
       "commonjs": true,
       "node": true
     },
-    "extends": "prettier",
-    "plugins": ["prettier"],
+    "parserOptions": {
+      "ecmaVersion": 2019
+    },
     "rules": {
       "no-duplicate-case": "error",
       "no-empty": "error",
@@ -22,8 +23,7 @@
       "camelcase": "error",
       "indent": ["error", 2],
       "quotes": ["error", "double"],
-      "semi": ["error", "always"],
-      "prettier/prettier": "error"
+      "semi": ["error", "always"]
     }
   }
   
