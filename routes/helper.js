@@ -4,7 +4,7 @@ const db = require("../models");
 /*===============================================================
       Helper Functions
 ===============================================================*/
-async function getMovieData(movieName) {
+async function getMovieData(movieID) {
   var dbData;
 
   // Pull information from OMDB
@@ -12,14 +12,14 @@ async function getMovieData(movieName) {
     method: "GET",
     url: "https://www.omdbapi.com/",
     params: {
-      t: movieName,
+      i: movieID,
       apikey: process.env.OMDBAPI
     }
   });
 
   // If OMDB fails to find data, end the process.
   if (omdb.data.Response === "False") {
-    console.log(`${movieName} could was not found.`);
+    console.log(`${movieID} could was not found.`);
     return omdb.data;
   }
 
@@ -84,6 +84,7 @@ async function getMovieData(movieName) {
 
     // if STILL null after all of that, then UTelly has no idea what this content is, and we will create an empty listing so it doesnt cause issues in the future.
     if (dbData === null) {
+      dbData = {};
       await db.Movies.create({
         name: omdb.data.Title,
         imdbID: omdb.data.imdbID
@@ -99,7 +100,6 @@ async function getMovieData(movieName) {
     }
   }
   //We finally have all the data, return it
-  console.log({ ...omdb.data, ...dbData.dataValues });
   return { ...omdb.data, ...dbData.dataValues };
 }
 
