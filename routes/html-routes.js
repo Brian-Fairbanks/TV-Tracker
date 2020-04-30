@@ -33,6 +33,6 @@ module.exports = function(app) {
   });
 
   app.get("/user", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/user.html"));
+    res.send(view.header(view.user()));
   });
 };

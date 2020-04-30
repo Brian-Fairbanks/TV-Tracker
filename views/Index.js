@@ -3,5 +3,6 @@ module.exports = {
   login: require("./loginview"),
   members: require("./membersview"),
   signup: require("./signupview"),
-  header: require("./header")
+  header: require("./header"),
+  user: require("./userpage")
 };
