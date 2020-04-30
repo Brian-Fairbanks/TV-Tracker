@@ -1,7 +1,8 @@
 module.exports = {
   searchResults: require("./searchResults.js"),
-  login: require("./loginview"),
-  members: require("./membersview"),
-  signup: require("./signupview"),
-  header: require("./header")
+  login: require("./loginview.js"),
+  members: require("./membersview.js"),
+  signup: require("./signupview.js"),
+  header: require("./header.js"),
+  content: require("./content.js")
 };
