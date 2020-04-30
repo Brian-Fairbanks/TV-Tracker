@@ -10,13 +10,9 @@ module.exports = function(sequelize, DataTypes) {
     uTellyLocations: DataTypes.TEXT
   });
 
-  // Movies.associate = function (models) {
-  //     // Associating Author with Posts
-  //     // When an Author is deleted, also delete any associated Posts
-  //     Movies.hasMany(models.Account, {
-  //         onDelete: "cascade"
-  //     });
-  // };
+  Movies.associate = function (models) {
+    Movies.belongsToMany(models.User, { through: "UserMovies" });
+  };
 
   return Movies;
 };

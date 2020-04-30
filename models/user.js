@@ -30,6 +30,12 @@ module.exports = function(sequelize, DataTypes) {
       bcrypt.genSaltSync(10),
       null
     );
+
   });
+
+  User.associate = function (models) {
+    User.belongsToMany(models.Movies, { through: "UserMovies" });
+  };
+  
   return User;
 };
