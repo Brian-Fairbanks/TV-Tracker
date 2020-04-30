@@ -1,18 +1,20 @@
 // alert("working");
-$(document).ready(function() {
+$(document).ready(function () {
   var userSearch = $("#search-bar");
   var userData = $("#search-box");
 
-  userSearch.on("submit", function(event) {
+  userSearch.on("submit", function (event) {
     event.preventDefault();
-    $.get("/api/search/" + userData.val().trim()).then(function(props) {
+    $.get("/api/search/" + userData.val().trim()).then(function (props) {
       $("#movies-title").html(
         props.Search.map(movie => {
           return `
-                      <div width="180px" style="display:inline-block;">
-                        <img height="250px" width="180px" src="${movie.Poster}" alt="${movie.Title} poster">
-                        <div style="width:180px; overflow-wrap: break-word;">
-                        <a href="/content/${movie.Title}">${movie.Title}</a> (${movie.Year})</div>
+                      <div class="inline-block mx-8 flex-none mb-4">
+                        <a href="/content/${movie.Title}">
+                          <img style="height: 175px; max-width: 185px" class="m-auto" src="${movie.Poster}" alt="${movie.Title} poster">
+                            <div style="max-height: 1.5em; max-width: 185px;" class="text-center text-white overflow-hidden">
+                            ${movie.Title} (${movie.Year})</div>
+                        </a>
                       </div>
                     `;
         }).join("")
