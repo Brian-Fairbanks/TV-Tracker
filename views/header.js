@@ -12,7 +12,7 @@ module.exports = function (body, user) {
       <link rel="stylesheet" href="../stylesheets/output.css" type="text/css" />
       <!-- Custom Stylesheet -->
       <link rel="stylesheet" href="../stylesheets/style.css" type="text/css" />
-      
+
       <!-- jQuery -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -36,7 +36,7 @@ module.exports = function (body, user) {
             </button>
           </div>
     
-          <div class="w-full flex-grow sm:flex sm:items-center sm:w-auto sm:block my-block" id="menu-options">
+          <div class="w-full flex-grow sm:flex sm:items-center sm:w-auto sm:block hidden" id="menu-options">
             <div class="text-sm sm:flex-grow flex-row sm:justify-between flex mr-4">
               <a href="/" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4">
                 Home
