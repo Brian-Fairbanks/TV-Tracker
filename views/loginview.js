@@ -1,4 +1,5 @@
-module.exports = `<div>
+module.exports = function() {
+  return `<div>
 <a href="/login"
   class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Login</a>
 <a href="/signup"
@@ -48,3 +49,4 @@ module.exports = `<div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/login.js"></script>
 `;
+};
