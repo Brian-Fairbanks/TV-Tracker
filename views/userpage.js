@@ -63,6 +63,8 @@ module.exports = function() {
             <h3 class="text-teal-200 hover:text-teal-500"><a href="#">More info...</a></h3>
         </div>
 
+    <div id="movies-title"></div>
+
     </div>
 
     <footer>
