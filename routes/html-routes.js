@@ -40,4 +40,8 @@ module.exports = function(app) {
   app.get("/user", isAuthenticated, function(req, res) {
     res.send(view.header(view.user(),req.user));
   });
+
+  app.get("/signup", function(req, res) {
+    res.send(view.header(view.signup(),req.user));
+  });
 };
