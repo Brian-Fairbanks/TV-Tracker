@@ -12,7 +12,7 @@ module.exports = function (body, user) {
       <link rel="stylesheet" href="../stylesheets/output.css" type="text/css" />
       <!-- Custom Stylesheet -->
       <link rel="stylesheet" href="../stylesheets/style.css" type="text/css" />
-
+      <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
       <!-- jQuery -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -41,6 +41,14 @@ module.exports = function (body, user) {
               <a href="/home" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4">
                 Home
               </a>
+        <div class="flex-auto flex justify-center mt-8">
+          <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto">
+            <form id="search-bar">
+                <input id="search-box" type="search" class="bg-purple-white shadow rounded border-0 p-3 w-full"
+                    placeholder="Search Movies or TV Shows to add...">
+            </form>
+          </div>
+        </div>
             ${!user ?
     `</div>
             <div>

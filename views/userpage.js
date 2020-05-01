@@ -1,14 +1,5 @@
 module.exports = function() {
   return `
-    <div class="flex-auto flex justify-center mt-8">
-        <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto">
-            <form id="search-bar">
-                <input id="search-box" type="search" class="bg-purple-white shadow rounded border-0 p-3 w-full"
-                    placeholder="Search Movies or TV Shows to add...">
-            </form>
-        </div>
-    </div>
-
     <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
 
 
