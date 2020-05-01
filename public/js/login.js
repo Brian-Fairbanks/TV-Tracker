@@ -24,16 +24,24 @@ $(document).ready(function() {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
+   
     $.post("/api/login", {
       email: email,
       password: password
     })
       .then(function() {
+        $("#alert").css({"display":"none"});
         window.location.replace("/user");
+        
         // If there's an error, log the error
       })
-      .catch(function(err) {
-        console.log(err);
-      });
+      .catch(function(){
+        console.log("Incorrect email and password. Please try again");
+        $("#alert").show();
+        // alert("Incorrect email and password. Please try again");
+      });      
   }
+  $("#alert").on("click",function(){
+    $("#alert").hide();
+  });
 });

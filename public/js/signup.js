@@ -32,11 +32,16 @@ $(document).ready(function() {
         window.location.replace("/user");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr);
+      .catch(handleLoginErr);      
   }
 
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
+  function handleLoginErr() {
+    console.log("somethingworng");
+    $("#alert").show();
+   
+    // alert("Incorrect email format. Please try again");
   }
+  $("#alert").on("click",function(){
+    $("#alert").hide();
+  });
 });
