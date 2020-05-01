@@ -41,6 +41,14 @@ module.exports = function (body, user) {
               <a href="/home" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4">
                 Home
               </a>
+        <div class="flex-auto flex justify-center mt-8">
+          <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto">
+            <form id="search-bar">
+                <input id="search-box" type="search" class="bg-purple-white shadow rounded border-0 p-3 w-full"
+                    placeholder="Search Movies or TV Shows to add...">
+            </form>
+          </div>
+        </div>
             ${!user ?
     `</div>
             <div>
