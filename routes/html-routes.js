@@ -25,6 +25,15 @@ module.exports = function(app) {
     res.send(view.header(view.login(),req.user));
   });
 
+  app.get("/signup", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      return res.redirect("/user");
+    }
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.send(view.header(view.signup(),req.user));
+  });
+
   app.get("/content/:content-:imdb", async function(req, res) {
     //get data from API
     const helper = require("./helper.js");

@@ -53,54 +53,46 @@ async function getMovieData(movieID) {
 
     //console.log(uTelly.data);
 
-    for (movie of uTelly.data.results) {
-      //console.log(movie);
-      var newMovie = {
-        name: movie.name,
-        imdbID: movie.external_ids.imdb.id,
+    var uMovie = uTelly.data.results.find(movie => movie.external_ids.imdb.id === omdb.data.imdbID);
+    console.log(uMovie);
 
-        uTellyUpdated: uTelly.data.updated,
-        uTellyID: movie.id,
-        uTellyPicture: movie.picture,
-        uTellyLocations: JSON.stringify(movie.locations)
-      };
+    // the movie needs these fields regardless.
+    var newMovie = {
+      name: omdb.data.Title,
+      imdbID: omdb.data.imdbID,
 
-      // insert data into database, if it doesnt already exist
-      let thisID = await db.Movies.findOne({
-        where: { imdbID: movie.external_ids.imdb.id }
-      });
+      genre: omdb.data.Genre,
+      releaseDate : omdb.data.Released,
+      runtime: omdb.data.Runtime,
+      poster: omdb.data.Poster,
+      type: omdb.data.Type,
 
-      if (thisID === null) {
-        await db.Movies.create(newMovie);
-      }
+      uTellyUpdated: null,
+      uTellyID: null,
+      uTellyPicture: null,
+      uTellyLocations: null
+    };
 
-      // and store this movie for the return if it does actually match the IMDB id
-      if (newMovie.imdbID === omdb.data.imdbID) {
-        console.log(newMovie);
-        dbData = {};
-        dbData.dataValues = newMovie;
-      }
+    //if UTelly found info, add that too.
+    if(uMovie){
+      newMovie.uTellyUpdated = uTelly.data.updated;
+      newMovie.uTellyID = uMovie.id;
+      newMovie.uTellyPicture = uMovie.picture;
+      newMovie.uTellyLocations = JSON.stringify(uMovie.locations);
     }
-
-    // if STILL null after all of that, then UTelly has no idea what this content is, and we will create an empty listing so it doesnt cause issues in the future.
-    if (dbData === null) {
-      dbData = {};
-      await db.Movies.create({
-        name: omdb.data.Title,
-        imdbID: omdb.data.imdbID
-      });
-      dbData.dataValues = {
-        name: omdb.data.Title,
-        imdbID: omdb.data.imdbID,
-        uTellyUpdated: null,
-        uTellyID: null,
-        uTellyPicture: null,
-        uTellyLocations: null
-      };
-    }
+    // insert it into the database
+    await db.Movies.create(newMovie);
   }
+
+  //return the database version of data, so it includes the proper movie id
+  const finalData = await db.Movies.findOne({
+    where: {
+      imdbID: omdb.data.imdbID
+    }
+  });
+
   //We finally have all the data, return it
-  return { ...omdb.data, ...dbData.dataValues };
+  return { ...omdb.data, ...finalData.dataValues};
 }
 
 module.exports = {
