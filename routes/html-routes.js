@@ -26,7 +26,7 @@ module.exports = function(app) {
       return res.redirect("/user");
     }
     // res.sendFile(path.join(__dirname, "../public/login.html"));
-    res.send(view.header(view.login(),req.user));
+    res.send(view.header(view.login(),req.user,false));
   });
 
   app.get("/signup", function(req, res) {
@@ -35,7 +35,7 @@ module.exports = function(app) {
       return res.redirect("/user");
     }
     // res.sendFile(path.join(__dirname, "../public/login.html"));
-    res.send(view.header(view.signup(),req.user));
+    res.send(view.header(view.signup(),req.user,false));
   });
 
   app.get("/content/:content-:imdb", async function(req, res) {

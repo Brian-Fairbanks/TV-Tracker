@@ -1,6 +1,20 @@
 // The body here should include the login/logout button in the header as well
 
-module.exports = function (body, user) {
+module.exports = function (body, user, includeSearchBar = true) {
+  // sets search bar in its own block for readabilitly
+  const searchMovie = `
+  <div class="flex-auto flex justify-center mt-8">
+    <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto">
+      <form id="search-bar">
+        <input id="search-box" type="search" class="bg-purple-white shadow rounded border-0 p-3 w-full"
+            placeholder="Search Movies or TV Shows to add...">
+      </form>
+    </div>
+  </div>
+
+  <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
+  `;
+
   return `<!DOCTYPE html>
     <html lang="en">
     
@@ -53,7 +67,8 @@ module.exports = function (body, user) {
             </div>
           </div>
         </nav>
-      </header>` : `
+      </header>` 
+    : `
       <p class="text-teal-200 inline-block sm:mt-0 mt-4">Welcome ${user.email}!</p>
       </div>
       <div>
@@ -64,19 +79,10 @@ module.exports = function (body, user) {
       </div>
       </div>
       </nav>
-      </header>`}
-      <div class="flex-auto flex justify-center mt-8">
-      <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto">
-        <form id="search-bar">
-            <input id="search-box" type="search" class="bg-purple-white shadow rounded border-0 p-3 w-full"
-                placeholder="Search Movies or TV Shows to add...">
-        </form>
-      </div>
-    </div>
-
-    <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
-
-            
+      </header>`
+}
+      ${includeSearchBar ? searchMovie : "" }
+           
         ${body}
     
       <footer>
