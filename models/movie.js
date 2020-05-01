@@ -4,6 +4,12 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     imdbID: DataTypes.STRING,
 
+    genre: DataTypes.STRING,
+    releaseDate : DataTypes.STRING,
+    runtime: DataTypes.STRING,
+    poster: DataTypes.STRING,
+    type: DataTypes.STRING,
+
     uTellyUpdated: DataTypes.DATE,
     uTellyID: DataTypes.STRING,
     uTellyPicture: DataTypes.STRING,
