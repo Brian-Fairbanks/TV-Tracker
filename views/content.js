@@ -1,9 +1,8 @@
 module.exports = function(props = {}, user) {
   return `
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <div class="flex justify-center text-center mt-2">
-  <div class="container flex flex-wrap h-full bg-teal-400 flex">
-    <div class="w-full text-center text-white mb-2 p-3 bg-gray-900">
+  <div class="container flex flex-wrap h-full bg-gray-900 flex text-white">
+    <div class="w-full text-center text-white mb-2 p-3 bg-gray-900 border-b-2 border-teal-500">
       <h1 class="text-2xl font-bold">${props.Title} (${props.Year})</h1>
       ${props.Released}
     </div>
@@ -33,7 +32,7 @@ module.exports = function(props = {}, user) {
       </div>
 
       <div class="pt-4">
-        <span class="font-bold border border-black rounded py-0 px-2">${
+        <span class="font-bold border border-white rounded py-0 px-2">${
   props.Rated
 }</span>
         ${props.Genre}
@@ -78,7 +77,7 @@ module.exports = function(props = {}, user) {
     :""}
 
     </div>
-    <div class="w-full flex justify-around mt-2 p-3 bg-gray-900">
+    <div class="w-full flex justify-around mt-2 p-3 bg-gray-900 border-t-2 border-teal-500">
       ${!props.uTellyLocations?
     `<div class="text-xl text-white">No streaming locations found for ${props.Title}.<div>`
     :JSON.parse(props.uTellyLocations)
