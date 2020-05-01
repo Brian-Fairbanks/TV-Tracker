@@ -92,7 +92,7 @@ async function getMovieData(movieID) {
   });
 
   //We finally have all the data, return it
-  return { ...omdb.data, ...finalData };
+  return { ...omdb.data, ...finalData.dataValues};
 }
 
 module.exports = {
