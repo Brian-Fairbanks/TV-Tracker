@@ -42,19 +42,21 @@ $(document).on("click", ".delete", handleWatchlistRemove);
 
 
 async function checkWatchList() {
-  const watchlist = await getWatchList();
-  console.log(watchlist);
-  console.log("===================");
-  // console.log(watchlist.responseJSON);
-  const imdbID = document.URL.split("-")[1];
-  if (watchlist.find(content => content.imdbID === imdbID)) {
-    console.log("in watchlist");
-    $("#addWatchlist").hide();
-    $("#removeWatchlist").show();
+  try {
+    const watchlist = await getWatchList();
+    const imdbID = document.URL.split("-")[1];
+    if (watchlist.find(content => content.imdbID === imdbID)) {
+      console.log("in watchlist");
+      $("#addWatchlist").hide();
+      $("#removeWatchlist").show();
+    }
+    else {
+      console.log("not in watchlist");
+      $("#addWatchlist").show();
+      $("#removeWatchlist").hide();
+    }
   }
-  else {
-    console.log("not in watchlist");
-    $("#addWatchlist").show();
-    $("#removeWatchlist").hide();
+  catch {
+    console.log("You are not signed in.");
   }
 }
