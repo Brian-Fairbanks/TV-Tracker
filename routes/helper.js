@@ -59,6 +59,12 @@ async function getMovieData(movieID) {
         name: movie.name,
         imdbID: movie.external_ids.imdb.id,
 
+        genre: omdb.data.Genre,
+        releaseDate : omdb.data.Released,
+        runtime: omdb.data.Runtime,
+        poster: omdb.data.Poster,
+        type: omdb.data.Type,
+
         uTellyUpdated: uTelly.data.updated,
         uTellyID: movie.id,
         uTellyPicture: movie.picture,
@@ -92,6 +98,13 @@ async function getMovieData(movieID) {
       dbData.dataValues = {
         name: omdb.data.Title,
         imdbID: omdb.data.imdbID,
+
+        genre: omdb.data.Genre,
+        releaseDate : omdb.data.Released,
+        runtime: omdb.data.Runtime,
+        poster: omdb.data.Poster,
+        type: omdb.data.Type,
+
         uTellyUpdated: null,
         uTellyID: null,
         uTellyPicture: null,
