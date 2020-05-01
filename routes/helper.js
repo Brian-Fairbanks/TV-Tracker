@@ -83,8 +83,16 @@ async function getMovieData(movieID) {
     // insert it into the database
     await db.Movies.create(newMovie);
   }
+
+  //return the database version of data, so it includes the proper movie id
+  const finalData = await db.Movies.findOne({
+    where: {
+      imdbID: omdb.data.imdbID
+    }
+  });
+
   //We finally have all the data, return it
-  return { ...omdb.data, ...uMovie };
+  return { ...omdb.data, ...finalData };
 }
 
 module.exports = {
