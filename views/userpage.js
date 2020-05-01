@@ -12,57 +12,30 @@ module.exports = function() {
     <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
 
 
-    <div id="movies" class="flex-auto flex flex-col content-center justify-center mt-8">
+    <div class="flex-auto flex flex-col content-center justify-center mt-8">
         <div class="w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-start py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white">
 
             <h2 id="movie-hide" class="pl-5 hover:text-teal-200 cursor-pointer">Movies &#8597;</h2>
         </div>
-        <!-- The div below defines the row for displaying info for one result -->
-        <div class="w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-around py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white movie">
-
-            <h2 id="title"><img src="https://via.placeholder.com/100x150" alt="Movie poster"/>Movie Title</h2>
-            <h2 id="genre">Movie Genre</h2>
-            <h2 id="release-date">Release Date</h2>
-            <h2 id="run-time">Run Time</h2>
-            <h3 class="text-teal-200 hover:text-teal-500"><a href="#">More info...</a></h3>
-        </div>
-        <div class="w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-around py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white movie">
-
-            <h2 id="title"><img src="https://via.placeholder.com/100x150" alt="Movie poster"/>Movie Title</h2>
-            <h2 id="genre">Movie Genre</h2>
-            <h2 id="release-date">Release Date</h2>
-            <h2 id="run-time">Run Time</h2>
-            <h3 class="text-teal-200 hover:text-teal-500"><a href="#">More info...</a></h3>
+        
+        <div id="movies">
         </div>
 
     </div>
 
-    <div id="shows" class="flex-auto flex flex-col content-center justify-center mt-8">
+    <div class="flex-auto flex flex-col content-center justify-center mt-8">
         <div class="w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-start py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white">
 
             <h2 id="show-hide" class="pl-5 hover:text-teal-200 cursor-pointer">Shows &#8597;</h2>
         </div>
-        <!-- The div below defines the row for displaying info for one result -->
-        <div class="w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-around py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white show">
 
-            <h2 id="title"><img src="https://via.placeholder.com/100x150" alt="Movie poster"/>Show Title</h2>
-            <h2 id="genre">Show Genre</h2>
-            <h2 id="release-date">Release Date</h2>
-            <h2 id="run-time">Run Time</h2>
-            <h3 class="text-teal-200 hover:text-teal-500"><a href="#">More info...</a></h3>
-        </div>
-        <div class="w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-around py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white show">
-
-            <h2 id="title"><img src="https://via.placeholder.com/100x150" alt="Movie poster"/>Show Title</h2>
-            <h2 id="genre">Show Genre</h2>
-            <h2 id="release-date">Release Date</h2>
-            <h2 id="run-time">Run Time</h2>
-            <h3 class="text-teal-200 hover:text-teal-500"><a href="#">More info...</a></h3>
+        <div id="shows">
         </div>
 
     </div>
 
+    <script type="text/javascript" src="./js/userscript.js"></script>
+    <script type="text/javascript" src="./js/watchlist.js"></script>
     <script type="text/javascript" src="./js/login.js"></script>
-    <script type="text/javascript" src="./js/search.js"></script>
-    <script type="text/javascript" src="./js/userscript.js"></script>`;
+    <script type="text/javascript" src="./js/search.js"></script>`;
 };

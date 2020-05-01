@@ -16,6 +16,10 @@ module.exports = function(app) {
     res.send(view.header(view.home(),req.user));
   });
 
+  app.get("/home", function(req, res) {
+    return res.send(view.header(view.home(), req.user));
+  });
+
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -49,4 +53,9 @@ module.exports = function(app) {
   app.get("/user", isAuthenticated, function(req, res) {
     res.send(view.header(view.user(),req.user));
   });
+
+  app.get("/signup", function(req, res) {
+    res.send(view.header(view.signup(),req.user));
+  });
 };
+
