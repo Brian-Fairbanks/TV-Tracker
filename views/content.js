@@ -7,7 +7,7 @@ module.exports = function(props = {}, user) {
       ${props.Released}
     </div>
     <div class="w-full sm:w-1/2 lg:w-1/3 flex justify-center">
-      <img class="m-2 w-1/2 sm:w-full h-auto" src="${props.Poster}" src="${
+      <img class="m-2" style="max-height: 400px;" src="${props.Poster}" src="${
   props.Title
 } Poster">
     </div>
@@ -89,6 +89,7 @@ module.exports = function(props = {}, user) {
   </div>
 </div>
 
+<script src="/js/getwatchlist.js"></script>
 <script src="/js/watchlist.js"></script>
   `;
 };
