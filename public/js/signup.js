@@ -51,4 +51,7 @@ $(document).ready(function() {
   $("#alert-email").on("click",function(){
     $("#alert-email").hide();
   });
+  $("#alert-password").on("click",function(){
+    $("#alert-password").hide();
+  });
 });
