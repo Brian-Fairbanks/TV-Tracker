@@ -12,7 +12,12 @@ module.exports = function (body, user, title, includeSearchBar = true) {
     </div>
   </div>
 
-  <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
+  <div class="relative mt-8 w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container">
+    <div id="movies-title" class="overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg flex flex-row justify-between">
+    </div>
+    <div class="absolute top-0 left-0 fadeToBackLeft"></div>
+    <div class="absolute top-0 right-0 fadeToBackRight"></div>
+  </div>
   `;
 
   // header button layout for someone signed in
