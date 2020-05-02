@@ -64,7 +64,9 @@ module.exports = function (body, user, title, includeSearchBar = true) {
       <header>
         <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6">
           <div class="flex items-center flex-shrink-0 mr-6">
-            <img src="../stylesheets/w4logo.svg" alt="W4 Logo/" class="logo">
+            <a href="/home">
+              <img src="../stylesheets/w4logo.svg" alt="W4 Logo/" class="logo">
+            </a>
           </div>
     
           <div class="block sm:hidden" id="menu-btn">
@@ -79,9 +81,10 @@ module.exports = function (body, user, title, includeSearchBar = true) {
     
           <div class="w-full flex-grow sm:flex sm:items-center sm:w-auto sm:block hidden" id="menu-options">
             <div class="text-sm sm:flex-grow flex-row sm:justify-between flex mr-4">
+              <!-- REMOVED HOME LINK USING WEBPAGE LOGO INSTEAD
               <a href="/home" class="block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4">
                 Home
-              </a>
+              </a> -->
         
             ${!user ? notSignedIn : `<p class="text-teal-200 inline-block sm:mt-0 mt-4">Welcome ${user.email}!</p>${signedIn}`}
             </div>
