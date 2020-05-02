@@ -13,7 +13,12 @@ module.exports = function(sequelize, DataTypes) {
     uTellyUpdated: DataTypes.DATE,
     uTellyID: DataTypes.STRING,
     uTellyPicture: DataTypes.STRING,
-    uTellyLocations: DataTypes.TEXT
+    uTellyLocations: DataTypes.TEXT,
+    views:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    } 
   });
 
   Movies.associate = function (models) {

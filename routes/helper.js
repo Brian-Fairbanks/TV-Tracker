@@ -1,5 +1,6 @@
 const axios = require("axios");
 const db = require("../models");
+const sequelize = require("sequelize");
 
 /*===============================================================
       Helper Functions
@@ -62,7 +63,7 @@ async function getMovieData(movieID) {
       imdbID: omdb.data.imdbID,
 
       genre: omdb.data.Genre,
-      releaseDate : omdb.data.Released,
+      releaseDate: omdb.data.Released,
       runtime: omdb.data.Runtime,
       poster: omdb.data.Poster,
       type: omdb.data.Type,
@@ -74,7 +75,7 @@ async function getMovieData(movieID) {
     };
 
     //if UTelly found info, add that too.
-    if(uMovie){
+    if (uMovie) {
       newMovie.uTellyUpdated = uTelly.data.updated;
       newMovie.uTellyID = uMovie.id;
       newMovie.uTellyPicture = uMovie.picture;
@@ -82,17 +83,20 @@ async function getMovieData(movieID) {
     }
     // insert it into the database
     await db.Movies.create(newMovie);
+
+    //return the database version of data, so it includes the proper movie id
+    dbData = await db.Movies.findOne({
+      where: {
+        imdbID: omdb.data.imdbID
+      }
+    });
+  }
+  else {
+    db.Movies.update({ views: sequelize.literal("views + 1") }, { where: { imdbID: omdb.data.imdbID } });
   }
 
-  //return the database version of data, so it includes the proper movie id
-  const finalData = await db.Movies.findOne({
-    where: {
-      imdbID: omdb.data.imdbID
-    }
-  });
-
   //We finally have all the data, return it
-  return { ...omdb.data, ...finalData.dataValues};
+  return { ...omdb.data, ...dbData.dataValues };
 }
 
 module.exports = {

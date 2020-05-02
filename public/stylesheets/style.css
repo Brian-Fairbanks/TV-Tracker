@@ -38,7 +38,7 @@ form.login {
   background: #1a202c; 
   border-radius: 10px;
 }
- 
+
 /* Handle */
 #movies-title::-webkit-scrollbar-thumb {
   background: #4eebe3; 
@@ -50,6 +50,17 @@ form.login {
   background: #37b8b1; 
 }
 
+/* fade out divs*/
+.fadeToBackRight, .fadeToBackLeft{
+  height:calc(100% - 20px);
+  width:30px;
+}
+.fadeToBackLeft{
+  background: linear-gradient(90deg, rgba(74,82,85,1) 0%, rgba(0,0,0,0) 100%);
+}
+.fadeToBackRight{
+  background: linear-gradient(270deg, rgba(74,82,85,1) 0%, rgba(0,0,0,0) 100%);
+}
 @media screen and (max-width: 639px) {
   #menu-options {
       display: none;
