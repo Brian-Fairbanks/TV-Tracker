@@ -91,7 +91,7 @@ module.exports = function (body, user, title, includeSearchBar = true) {
       </footer>
     
       <script src="/js/navbar.js"></script></body>
-      <script type="text/javascript" src="./js/search.js"></script>
+      <script type="text/javascript" src="/js/search.js"></script>
 
     </html>`;
 };
