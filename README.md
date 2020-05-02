@@ -1,5 +1,5 @@
 # Watch What Where When
-[travis badge](https://img.shields.io/travis/Brian-Fairbanks/TV-Tracker)
+![travis badge](https://img.shields.io/travis/Brian-Fairbanks/TV-Tracker)
 
 ## Description
 <img src="https://raw.githubusercontent.com/Brian-Fairbanks/TV-Tracker/master/public/favicon.ico" align="right" alt="W4 Logo by Brian Fairbanks" width="150" height="150">
