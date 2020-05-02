@@ -49,7 +49,7 @@ module.exports = function() {
             Forgot Password?
           </a>
         </div>
-        <p class="text-center mt-5">Or sign up <a href="/" class="text-teal-500">here</a></p>
+        <p class="text-center mt-5">Or sign up <a href="/signup" class="text-teal-500">here</a></p>
       </form>
 
     </div>

@@ -30,7 +30,7 @@ module.exports = function(app) {
   });
 
   app.get("/signup", function(req, res) {
-    // If the user already has an account send them to the members page
+    // If the user wishes to make an account they will be sent to signup page
     if (req.user) {
       return res.redirect("/user");
     }
