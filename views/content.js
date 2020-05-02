@@ -1,7 +1,7 @@
 module.exports = function(props = {}, user) {
   return `
 <div class="flex justify-center text-center mt-2">
-  <div class="container flex flex-wrap h-full bg-gray-900 flex text-white">
+  <div class="rounded-lg container flex flex-wrap h-full bg-gray-900 flex text-white">
     <div class="w-full text-center text-white mb-2 p-3 bg-gray-900 border-b-2 border-teal-500">
       <h1 class="text-2xl font-bold">${props.Title} (${props.Year})</h1>
       ${props.Released}

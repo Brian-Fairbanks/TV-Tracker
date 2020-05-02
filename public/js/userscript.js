@@ -1,28 +1,37 @@
 var moviesActive = false;
-document.getElementById("movie-hide").addEventListener("click", function () {
+document.getElementById("movie-arrow").addEventListener("click", function () {
   moviesActive = !moviesActive;
   if (moviesActive) {
     document
       .querySelectorAll(".movie")
       .forEach(item => item.classList.add("hidden"));
+    document.getElementById("movie-arrow").classList.add("fa-caret-square-down");
+    document.getElementById("movie-arrow").classList.remove("fa-caret-square-up");
+
   } else {
     document
       .querySelectorAll(".movie")
       .forEach(item => item.classList.remove("hidden"));
+    document.getElementById("movie-arrow").classList.add("fa-caret-square-up");
+    document.getElementById("movie-arrow").classList.remove("fa-caret-square-down");
   }
 });
 
 var showsActive = false;
-document.getElementById("show-hide").addEventListener("click", function () {
+document.getElementById("show-arrow").addEventListener("click", function () {
   showsActive = !showsActive;
   if (showsActive) {
     document
       .querySelectorAll(".show")
       .forEach(item => item.classList.add("hidden"));
+    document.getElementById("show-arrow").classList.add("fa-caret-square-down");
+    document.getElementById("show-arrow").classList.remove("fa-caret-square-up");
   } else {
     document
       .querySelectorAll(".show")
       .forEach(item => item.classList.remove("hidden"));
+    document.getElementById("show-arrow").classList.add("fa-caret-square-up");
+    document.getElementById("show-arrow").classList.remove("fa-caret-square-down");
   }
 });
 
