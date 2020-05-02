@@ -61,4 +61,25 @@ module.exports = function(app) {
     }
   });
 
+  // Trending Data
+  // ==========================================================================
+  // takes param for count
+  app.get("/api/user/trending/:count?", async function(req, res){
+    try{
+      const trendingMovies = await db.Movies.findAll({
+        limit: req.params.count?parseInt(req.params.count):10,
+        order: [
+          ["views", "DESC"],
+          ["createdAt", "DESC"],
+        ]
+      });
+
+      return res.json(trendingMovies);
+    }
+    catch(err){
+      console.error("OOPS!:"+err.stack);
+      return res.status(500).json("Error getting trending data!");
+    }
+  });
+
 };
