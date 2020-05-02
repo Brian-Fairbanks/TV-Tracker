@@ -1,6 +1,6 @@
 // The body here should include the login/logout button in the header as well
 
-module.exports = function (body, user, includeSearchBar = true) {
+module.exports = function (body, user, title, includeSearchBar = true) {
   // sets search bar in its own block for readabilitly
   const searchMovie = `
   <div class="flex-auto flex justify-center mt-8">
@@ -14,6 +14,28 @@ module.exports = function (body, user, includeSearchBar = true) {
 
   <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
   `;
+
+  // header button layout for someone signed in
+  const notSignedIn = `
+  </div>
+    <div>
+      <a href="/login"
+        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Login</a>
+      <a href="/signup"
+        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">SignUp</a>
+    </div>`;
+
+  // header button layout for someone not signed in
+  const signedIn = `
+    </div>
+    <div>
+    <a href="/user"
+      class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">My Watch List</a>
+    <a href="/logout"
+      class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Logout</a>
+    </div>`;
+
+  // Render the end view
 
   return `<!DOCTYPE html>
     <html lang="en">
@@ -31,7 +53,7 @@ module.exports = function (body, user, includeSearchBar = true) {
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     
-      <title>W4</title>
+      <title>${title}</title>
     </head>
     <body>
       <header>
@@ -56,33 +78,12 @@ module.exports = function (body, user, includeSearchBar = true) {
                 Home
               </a>
         
-            ${!user ?
-    `</div>
-            <div>
-              <a href="/login"
-                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Login</a>
-              <a href="/signup"
-                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Sign
-              Up</a>
+            ${!user ? notSignedIn : `<p class="text-teal-200 inline-block sm:mt-0 mt-4">Welcome ${user.email}!</p>${signedIn}`}
             </div>
-          </div>
-        </nav>
-      </header>` 
-    : `
-      <p class="text-teal-200 inline-block sm:mt-0 mt-4">Welcome ${user.email}!</p>
-      </div>
-      <div>
-      <a href="/user"
-        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">My Watch List</a>
-      <a href="/logout"
-        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Logout</a>
-      </div>
-      </div>
-      </nav>
-      </header>`
-}
-      ${includeSearchBar ? searchMovie : "" }
-           
+          </nav>
+        </header>
+        ${includeSearchBar ? searchMovie : "" }
+        
         ${body}
     
       <footer>
