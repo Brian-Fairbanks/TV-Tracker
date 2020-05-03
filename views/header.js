@@ -96,16 +96,19 @@ module.exports = function (body, user, title, includeSearchBar = true) {
     
       <footer>
         <div class="w-full bg-gray-900 mt-5">
-          <div class="container flexjustify-around font-extrabold text-white bg-green-700 mx-auto">
-            <div class="w-1/3>
-              Powered By:
-
-            </div>
+          <div class="container flex justify-around font-extrabold text-white mx-auto">
             <div class="w-1/3 justify-around font-extrabold text-white">
+              <div  class="text-teal-200 border-b-2">Powered By By:</div>
+              <a class="px-3 devLink" href="https://www.utelly.com/">UTelly</a>
+              <a class="px-3 devLink" href="http://www.omdbapi.com/">OMDB</a>
+            </div>
+
+            <div class="w-1/3 justify-around font-extrabold text-white">
+              <div class="text-teal-200 border-b-2">Developed By:</div>
               <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Brian</a>
-              <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Ryan</a>
-              <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Jumi</a>
-              <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Khanh</a>
+              <a class="px-3 devLink" href="https://github.com/ryangautier1">Ryan</a>
+              <a class="px-3 devLink" href="https://github.com/JumiGore">Jumi</a>
+              <a class="px-3 devLink" href="https://github.com/KHANHHOANG1988">Khanh</a>
               <a class="px-3 devLink" href="https://github.com/jroenitz">Jordan</a>
             </div>
           </div>
