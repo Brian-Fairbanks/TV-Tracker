@@ -7,7 +7,7 @@ module.exports = function(props = {}, user) {
       ${props.Released}
     </div>
     <div class="w-full sm:w-1/2 lg:w-1/3 flex justify-center">
-      <img class="m-2" style="max-height: 400px;" src="${props.Poster}" src="${
+      <img class="m-2" style="max-height: 400px;" src="${(props.Poster !== "N/A" && props.Poster !==null)?props.Poster:"/assets/poster1.png"}" src="${
   props.Title
 } Poster">
     </div>
