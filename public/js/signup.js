@@ -3,10 +3,17 @@ $(document).ready(function() {
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
+  var passwordConfirm = $("input#password-confirm");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
+    if (passwordInput.val().trim() !== passwordConfirm.val().trim()){
+      $("#alert-password").show();
+      return;
+    }
+    
+    
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
@@ -37,11 +44,14 @@ $(document).ready(function() {
 
   function handleLoginErr() {
     console.log("somethingworng");
-    $("#alert").show();
+    $("#alert-email").show();
    
     // alert("Incorrect email format. Please try again");
   }
-  $("#alert").on("click",function(){
-    $("#alert").hide();
+  $("#alert-email").on("click",function(){
+    $("#alert-email").hide();
+  });
+  $("#alert-password").on("click",function(){
+    $("#alert-password").hide();
   });
 });
