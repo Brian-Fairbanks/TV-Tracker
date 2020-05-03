@@ -85,6 +85,8 @@ module.exports = function(props = {}, user) {
         return `<a href="${location.url}"><img class="logo" src="${(location.display_name !== "ABCIVAUS")?location.icon:"/assets/abc_logo.png"}" src="${location.name}"></a>`;
       })
       .join("")}
+        </div>
+      </div>
     </div>
   </div>
 </div>
