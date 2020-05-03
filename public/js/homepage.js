@@ -18,11 +18,12 @@ async function appenddata() {
     <h2>
     <a href="/content/${item.name}-${item.imdbID}">
     <img src="${
-      (item.poster !== "N/A" && item.poster !==null)?item.poster:"/assets/poster1.png"
-    }" alt="${item.name}" style="width: 150px;" class="m-auto text-center">${item.name}
+  (item.poster !== "N/A" && item.poster !==null)?item.poster:"/assets/poster1.png"
+}" alt="${item.name}" style="width: 150px;" class="m-auto text-center">${item.name}
     </a>
     </h2>
     </div>`;
+    
     $("#trending").append(htmlstring);
 
   });

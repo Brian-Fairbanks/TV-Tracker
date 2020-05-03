@@ -74,7 +74,7 @@ module.exports = function(props = {}, user) {
       <button id="addWatchlist" data-movie-id="${props.id}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-900 hover:bg-white mt-4 sm:mt-0">Add to Watchlist</button>
       <button id="removeWatchlist" data-movie-id="${props.id}" class=" delete inline-block text-sm px-4 py-2 leading-none border rounded text-red-600 border-red-600 hover:border-transparent hover:text-white hover:bg-red-600 mt-4 sm:mt-0">Remove from Watchlist</button>
       `
-    :""}
+    :"Sign up or Log in to add to your watchlist!"}
 
     </div>
     <div class="w-full flex justify-around mt-2 p-3 border-t-2 border-teal-500">
@@ -82,7 +82,7 @@ module.exports = function(props = {}, user) {
     `<div class="text-xl text-white">No streaming locations found for ${props.Title}.<div>`
     :JSON.parse(props.uTellyLocations)
       .map(location => {
-        return `<a href="${location.url}"><img class="logo" src="${location.icon}" src="${location.name}"></a>`;
+        return `<a href="${location.url}"><img class="logo" src="${(location.display_name !== "ABCIVAUS")?location.icon:"/assets/abc_logo.png"}" src="${location.name}"></a>`;
       })
       .join("")}
     </div>

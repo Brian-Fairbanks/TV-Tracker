@@ -62,7 +62,9 @@ async function appenddata() {
   $("#shows").empty();
   watchlist.forEach(item => {
 
-    var htmlstring = `<h2 id="title"><img src="${item.poster}" alt="Movie poster" style="width: 100px;"/>${item.name}</h2>
+    var htmlstring = `<h2 id="title"><img src="${
+      (item.poster !== "N/A" && item.poster !==null)?item.poster:"/assets/poster1.png"
+    }" alt="Movie poster" style="width: 100px;"/>${item.name}</h2>
       <h2 id="genre" class="mt-3 sm:m-0">${item.genre.split(",")[0]}</h2>
       <h2 id="release-date">${item.releaseDate}</h2>
       <h2 id="run-time">${item.runtime}</h2>

@@ -12,8 +12,8 @@ $(document).ready(function () {
                       <div class="inline-block mx-8 flex-none mb-4">
                         <a href="/content/${movie.Title}-${movie.imdbID}">
                           <img style="height: 175px; max-width: 185px" class="m-auto" src="${
-                              (movie.Poster !== "N/A" && movie.Poster !==null)?movie.Poster:"/assets/poster1.png"
-                            }
+  (movie.Poster !== "N/A" && movie.Poster !==null)?movie.Poster:"/assets/poster1.png"
+}
                             " alt="${movie.Title} poster">
                             <div style="max-height: 1.5em; max-width: 185px;" class="text-center text-white overflow-hidden">
                             ${movie.Title} (${movie.Year})</div>
