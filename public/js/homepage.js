@@ -2,7 +2,7 @@ appenddata();
 
 function getTrending() {
   return $.ajax({
-    url: "/api/user/trending",
+    url: "/api/user/trending/12",
     type: "GET"
   });
 }
