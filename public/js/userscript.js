@@ -62,23 +62,22 @@ async function appenddata() {
   $("#shows").empty();
   watchlist.forEach(item => {
 
-    var htmlstring = `<h2 id="title"><img src="${
+    var htmlstring = `<a href="/content/${item.name}-${item.imdbID}"><h2 id="title" style="width:200px; overflow:wrap;" overflow"><img class="m-auto"src="${
       (item.poster !== "N/A" && item.poster !==null)?item.poster:"/assets/poster1.png"
-    }" alt="Movie poster" style="width: 100px;"/>${item.name}</h2>
-      <h2 id="genre" class="mt-3 sm:m-0">${item.genre.split(",")[0]}</h2>
+    }" alt="Movie poster" style="width: 100px;"/>${item.name}</a></h2>
+      <div id="genre" class="mt-3 sm:m-0">${item.genre.split(",").map(genre => `<div class="inline-block sm:block px-2">${genre}</div>`).join("")}</div>
       <h2 id="release-date">${item.releaseDate}</h2>
       <h2 id="run-time">${item.runtime}</h2>
-      <h3 class="text-teal-200 hover:text-teal-500 mt-3 sm:m-0"><a href="/content/${item.name}-${item.imdbID}">
-      More info...</a></h3>
-      <div data-movie-id="${item.id}" class="absolute bg-red-800 pb-6 w-5 h-5 rounded cursor-pointer delete" style="top: 10px; right: 10px; opacity: 80%;">X</div>
+      <h3 class="text-teal-200 hover:text-teal-500 mt-3 sm:m-0">
+      <div data-movie-id="${item.id}" class="absolute cursor-pointer delete" style="top: 10px; right: 10px;"> <i class="text-red-600 far fa-window-close"></i> </div>
       </div>`;
 
     if (item.type === "movie") {
-      htmlstring = "<div class='relative sm:flex-row flex-col w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-around py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white movie'>" + htmlstring;
+      htmlstring = "<div class='relative sm:flex-row flex-col w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-between py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white movie'>" + htmlstring;
       $("#movies").append(htmlstring);
     }
     else {
-      htmlstring = "<div class='relative sm:flex-row flex-col w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-around py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white show'>" + htmlstring;
+      htmlstring = "<div class='relative sm:flex-row flex-col w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex-auto flex justify-between py-3 text-center items-center bg-gray-900 border-b-2 border-teal-500 text-white show'>" + htmlstring;
       $("#shows").append(htmlstring);
     }
   });
