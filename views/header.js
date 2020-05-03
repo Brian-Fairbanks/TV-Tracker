@@ -95,7 +95,22 @@ module.exports = function (body, user, title, includeSearchBar = true) {
         ${body}
     
       <footer>
-        <div class="text-teal-200">Copyright</div>
+        <div class="w-full bg-gray-900 mt-5">
+          <div class="container flexjustify-around font-extrabold text-white bg-green-700 mx-auto">
+            <div class="w-1/3>
+              Powered By:
+
+            </div>
+            <div class="w-1/3 justify-around font-extrabold text-white">
+              <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Brian</a>
+              <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Ryan</a>
+              <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Jumi</a>
+              <a class="px-3 devLink" href="https://brian-fairbanks.github.io/Bootstrap-Portfolio/index.html">Khanh</a>
+              <a class="px-3 devLink" href="https://github.com/jroenitz">Jordan</a>
+            </div>
+          </div>
+          <div class="text-teal-200">Copyright 2020</div>
+        </div>
       </footer>
     
       <script src="/js/navbar.js"></script></body>
