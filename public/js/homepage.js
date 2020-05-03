@@ -14,7 +14,7 @@ async function appenddata() {
   $("#trending").empty();
   trending.forEach(item => {
 
-    var htmlstring = `<div class="w-1/3 mb-5">
+    var htmlstring = `<div class="w-1/3 mb-5 px-2">
     <h2>
     <a href="/content/${item.name}-${item.imdbID}">
     <img src="${
