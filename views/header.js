@@ -4,16 +4,19 @@ module.exports = function (body, user, title, includeSearchBar = true) {
   // sets search bar in its own block for readabilitly
   const searchMovie = `
   <div class="flex-auto flex justify-center mt-8">
-    <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto">
-      <form id="search-bar">
-        <input id="search-box" type="search" class="bg-purple-white shadow rounded border-0 p-3 w-full"
-            placeholder="Search Movies or TV Shows to add...">
+    <div class="w-full md:max-w-md sm:max-w-sm max-w-xs m-auto content-center">
+      <form id="search-bar" class="flex justify-center items-center">
+        <i id="prevSearch" class="text-teal-500 hover:text-teal-300 opacity-25 fas fa-angle-double-left"></i>
+        <input id="search-box" type="search" class="bg-white shadow rounded border-0 p-3 w-4/5 mx-2"
+          placeholder="Search Movies or TV Shows to add...">
+        <i id="nextSearch" class="text-teal-500 hover:text-teal-300 opacity-25 fas fa-angle-double-right"></i>
       </form>
     </div>
   </div>
 
-  <div class="relative mt-8 w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container">
-    <div id="movies-title" class="overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg flex flex-row justify-between">
+  <div class="relative mt-3 w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container">
+    <div id="searchResults" class="text-center text-white"></div>
+    <div id="movies-title" class="mt-3 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg flex flex-row justify-between">
     </div>
     <div class="absolute top-0 left-0 fadeToBackLeft"></div>
     <div class="absolute top-0 right-0 fadeToBackRight"></div>
@@ -56,6 +59,8 @@ module.exports = function (body, user, title, includeSearchBar = true) {
       <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
       <!-- jQuery -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!-- Font Awesome -->
+      <script src="https://kit.fontawesome.com/7a56207d34.js" crossorigin="anonymous"></script>
 
     
       <title>${title}</title>
