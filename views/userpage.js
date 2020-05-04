@@ -1,6 +1,5 @@
 module.exports = function() {
-  return `<script src="https://kit.fontawesome.com/7a56207d34.js" crossorigin="anonymous"></script>
-
+  return `
     <div id="movies-title" class="mt-8 overflow-x-auto w-full lg:max-w-4xl md:max-w-3xl sm:max-w-xl max-w-lg m-auto container flex flex-row justify-between"></div>
 
 

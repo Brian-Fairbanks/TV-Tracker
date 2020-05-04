@@ -2,10 +2,36 @@
 $(document).ready(function () {
   var userSearch = $("#search-bar");
   var userData = $("#search-box");
+  var curSearch = 1;
+  var curMax = -1;
+  var lastSearch = "";
 
-  userSearch.on("submit", function (event) {
-    event.preventDefault();
-    $.get("/api/search/" + userData.val().trim()).then(function (props) {
+
+  function runSearch(){
+    const searchTerm = userData.val().trim();
+
+    //check if new search
+    if(lastSearch !== searchTerm){
+      curSearch = 1;
+      curMax = -1;
+    }
+
+    lastSearch = searchTerm;
+
+    $.get("/api/search/" +searchTerm+"/"+curSearch).then(function (props) {
+      curMax = props.totalResults;
+
+      // reset the scrollbar on each search
+      $("#movies-title").scrollLeft(0);
+
+      if(curSearch > 1){$("#prevSearch").removeClass("opacity-25");}
+      else{$("#prevSearch").addClass("opacity-25");}
+
+      if(curSearch < curMax/10){$("#nextSearch").removeClass("opacity-25");}
+      else{$("#nextSearch").addClass("opacity-25");}
+      console.log(props);
+
+      $("#searchResults").text(`Showing ${curSearch*10-9} - ${(curSearch*10 < curMax)?curSearch*10:curMax} of ${props.totalResults}`);
       $("#movies-title").html(
         props.Search.map(movie => {
           return `
@@ -23,7 +49,27 @@ $(document).ready(function () {
         }).join("")
       );
       //   $(".member-name").text(data.email);
-      // console.log(data);
     });
+  }
+
+  userSearch.on("submit", function (event) {
+    event.preventDefault();
+    runSearch();
   });
+
+  
+  $("#nextSearch").on("click", function(){
+    if (curSearch < curMax/10){
+      curSearch+=1;
+      runSearch();
+    }
+  });
+
+  $("#prevSearch").on("click", function(){
+    if (curSearch > 1){
+      curSearch-=1;
+      runSearch();
+    }
+  });
+
 });
