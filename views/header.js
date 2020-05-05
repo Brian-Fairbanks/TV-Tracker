@@ -52,11 +52,10 @@ module.exports = function (body, user, title, includeSearchBar = true) {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-      <!-- Tailwind Stylesheet -->
-      <link rel="stylesheet" href="../stylesheets/output.css" type="text/css" />
+      <!-- Tailwind -->
+      <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
       <!-- Custom Stylesheet -->
       <link rel="stylesheet" href="../stylesheets/style.css" type="text/css" />
-      <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
       <!-- jQuery -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <!-- Font Awesome -->
