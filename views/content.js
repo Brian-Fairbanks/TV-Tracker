@@ -91,7 +91,7 @@ module.exports = function(props = {}, user) {
   </div>
 </div>
 
-<script src="/js/getwatchlist.js"></script>
+<script src="/dist/getwatchlist-min.js"></script>
 <script src="/js/watchlist.js"></script>
   `;
 };
