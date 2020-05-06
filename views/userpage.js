@@ -24,6 +24,6 @@ module.exports = function() {
     </div>
 
     <script type="text/javascript" src="./js/getwatchlist.js"></script>
-    <script type="text/javascript" src="./js/userscript.js"></script>
+    <script type="text/javascript" src="./dist/userscript-min.js"></script>
     <script type="text/javascript" src="./js/login.js"></script>`;
 };
