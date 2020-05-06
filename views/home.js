@@ -15,6 +15,6 @@ module.exports = function() {
     </div>
 
 </div>
-<script type="text/javascript" src="./js/homepage.js"></script>
+<script type="text/javascript" src="./dist/homepage-min.js"></script>
 `;
 };
